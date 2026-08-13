@@ -30,3 +30,7 @@ For each bit, the program checks whether it is set using:
 
 If the bit is set, the corresponding LED is turned on.
 Otherwise, it is turned off.
+
+## Demo
+
+![Binary Counter Demo](binary_counter_recording.gif)
