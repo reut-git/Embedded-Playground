@@ -29,3 +29,7 @@ The program keeps track of the currently active LED and changes its position eve
 When the active LED reaches one end of the row, the direction is reversed, creating the back-and-forth Knight Rider effect.
 
 Only one LED is turned on at a time.
+
+## Demo
+
+![Knight Rider Demo](knight_rider_demo.gif)
