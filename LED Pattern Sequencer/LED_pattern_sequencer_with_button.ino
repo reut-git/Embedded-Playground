@@ -17,14 +17,15 @@ constexpr int Sequence[] = {
     9, 6, 15, 0, 5, 10
 };
 
-
-
 constexpr int NUM_BITS = 4;
 constexpr int SEQUENCE_SIZE = 6;
 
 unsigned long lastChange = 0;
 
 int sequenceIndex = 0;
+bool isRunning = false;
+int previousButtonState = LOW;
+
 
 void setup() {
 
@@ -38,7 +39,16 @@ void setup() {
 }
 
 void loop() {
-  if(digitalRead(BUTTON_PIN) == HIGH){
+  
+  int currentButtonState = digitalRead(BUTTON_PIN); 
+
+  if(previousButtonState == LOW && currentButtonState == HIGH ){
+    isRunning = !isRunning;
+  }
+
+  previousButtonState = currentButtonState;
+
+  if(isRunning){
     
       if(millis() - lastChange >= 500){
 
@@ -52,7 +62,7 @@ void loop() {
 
       lastChange = millis();
 
-   }
+    }
   } 
      
 }
